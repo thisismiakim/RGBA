@@ -17,6 +17,8 @@ add_executable(RGBA)
 # See here for more details https://crascit.com/2016/01/31/enhanced-source-file-handling-with-target_sources/
 target_sources(RGBA PRIVATE src/main.cpp)
 
+# add include paths
+include_directories(include)
 
 #################################################################################
 # Testing code
@@ -28,5 +30,5 @@ enable_testing()
 add_executable(RGBATests)
 target_sources(RGBATests PRIVATE tests/RGBATests.cpp)
 target_link_libraries(RGBATests PRIVATE GTest::gtest GTest::gtest_main)
-//gtest_discover_tests(RGBATests)
+gtest_discover_tests(RGBATests)
 
